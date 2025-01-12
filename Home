@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JEVFSWQJX"></script>
@@ -126,6 +126,8 @@
             <li><strong>/setup</strong> - Set up the bot.</li>
             <li><strong>/shop</strong> - Get the shop!</li>
             <li><strong>/withdraw</strong> - Withdraw money from your bank.</li>
+            <li><strong>/walk-fish</strong> - Walk your fish for cash!</li>
+
         </ul>
     </section>
 
@@ -139,6 +141,7 @@
             <li><strong>/premium-info</strong> - Get the premium info.</li>
             <li><strong>/remind</strong> - Set the fishing reminder to True/False.</li>
             <li><strong>/split-cash</strong> - Split your cash with two random users!</li>
+
         </ul>
     </section>
 
@@ -199,3 +202,4 @@
     </script>
 </body>
 </html>
+
