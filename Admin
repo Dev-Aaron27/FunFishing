@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8JEVFSWQJX"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locked Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.5rem;
+            opacity: 1;
+            transition: background-color 0.3s ease;
+        }
+        #loginBtn {
+            background-color: #0066cc;
+        }
+        #loginBtn:hover {
+            background-color: #004da1;
+        }
+        .btn-blue {
+            background: #0066cc;
+        }
+        .btn-blue:hover {
+            background: #004da1;
+        }
+        .btn-gold {
+            background: #ffc107;
+            color: #333;
+        }
+        .btn-gold:hover {
+            background: #e0a800;
+        }
+        .btn-red {
+            background: #dc3545;
+        }
+        .btn-red:hover {
+            background: #c82333;
+        }
+        .roadmap, .premium {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f7faff;
+        }
+        .roadmap h2, .premium h2 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+        .roadmap .months {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .roadmap .month {
+            flex: 1 1 calc(33.33% - 1rem);
+            padding: 1rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
+        .roadmap .month h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        .roadmap .month p {
+            margin: 0.5rem 0 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .roadmap .month.january {
+            background: #d4edda; /* Green background for January */
+            border-color: #c3e6cb;
+        }
+        .roadmap .month.january::after {
+            content: "✔";
+            font-size: 1.2rem;
+            color: #28a745;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .premium ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .premium ul li {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #333;
+        }
+        .error {
+            color: red;
+            margin-top: 0.5rem;
+        }
+        .success {
+            color: green;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Locked Page</h1>
+        <p>Enter the correct email and password to access the Fun Fishing features.</p>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="loginBtn" onclick="validateLogin()">Login</button>
+        <p id="message" class="error"></p>
+        <div id="actions" style="display: none;">
+            <button class="btn-blue" onclick="showRoadmap()">Roadmap</button>
+            <button class="btn-gold" onclick="showPremium()">Premium</button>
+            <button class="btn-red" onclick="logout()">Logout</button>
+        </div>
+        <div id="roadmap" class="roadmap">
+            <h2>2025 Fun Fishing Roadmap</h2>
+            <div class="months">
+                <div class="month january">
+                    <h3>January (1.25)</h3>
+                    <p>Enhanced Daily Rewards: Chance to get rare items like the "Golden Fish."</p>
+                </div>
+                <div class="month">
+                    <h3>February (2.25)</h3>
+                    <p>Valentine's Day Event: Catch "Heart Fish" to redeem themed items.</p>
+                </div>
+                <div class="month">
+                    <h3>March (3.25)</h3>
+                    <p>Group Fishing Challenges: Collaborate with server members for rewards.</p>
+                </div>
+                <div class="month">
+                    <h3>April (4.25)</h3>
+                    <p>Easter Egg Hunt: Find "Egg Fish" containing surprises!</p>
+                </div>
+                <div class="month">
+                    <h3>May (5.25)</h3>
+                    <p>New Rod Releases: Introducing "Lucky Rod" for bonus rare fish.</p>
+                </div>
+                <div class="month">
+                    <h3>June (6.25)</h3>
+                    <p>Fishing Spot Expansion: Explore new spots like "Tropical Waters."</p>
+                </div>
+                <div class="month">
+                    <h3>July (7.25)</h3>
+                    <p>Summer Festival Event: Participate in summer-themed challenges.</p>
+                </div>
+                <div class="month">
+                    <h3>August (8.25)</h3>
+                    <p>Mystery Box Overhaul: Enhanced rewards, including premium items.</p>
+                </div>
+                <div class="month">
+                    <h3>September (9.25)</h3>
+                    <p>Weekly Leaderboards: Rewards for top performers each week.</p>
+                </div>
+                <div class="month">
+                    <h3>October (10.25)</h3>
+                    <p>Halloween Event: Catch spooky-themed fish and use the "Ghost Rod."</p>
+                </div>
+                <div class="month">
+                    <h3>November (11.25)</h3>
+                    <p>Trade System: Players can trade fish and items with each other.</p>
+                </div>
+                <div class="month">
+                    <h3>December (12.25)</h3>
+                    <p>Christmas Treasure Hunt: Find rare "Christmas Fish" or "Gift Boxes."</p>
+                </div>
+            </div>
+        </div>
+        <div id="premium" class="premium">
+            <h2>Premium Servers</h2>
+            <ul>
+                <li>Fun Fishing Support</li>
+                <li>Cosmic</li>
+                <li>Grand Grimoire Support</li>
+                <li>Easy Promotion</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const validCredentials = [
+            { email: "1262009115689881702admin@funfishing.com", password: "t54K83nPJbZ" },
+            { email: "1148212880722890783admin@funfishing.com", password: "Dx5108XfO9p" },
+            { email: "ADMIN.ff@funfishing.com", password: "ADMIN.FF.2" }
+        ];
+
+        function validateLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+            const actions = document.getElementById('actions');
+            const roadmap = document.getElementById('roadmap');
+            const premium = document.getElementById('premium');
+            const loginBtn = document.getElementById('loginBtn');
+
+            const isValid = validCredentials.some(cred => cred.email === email && cred.password === password);
+
+            if (isValid) {
+                message.textContent = "Access Granted!";
+                message.className = "success";
+                actions.style.display = "block";
+                loginBtn.style.display = "none";  // Hide login button after successful login
+                roadmap.style.display = "none";
+                premium.style.display = "none";
+            } else {
+                message.textContent = "Invalid email or password. Please try again.";
+                message.className = "error";
+                actions.style.display = "none";
+                roadmap.style.display = "none";
+                premium.style.display = "none";
+            }
+        }
+
+        function showRoadmap() {
+            document.getElementById('roadmap').style.display = "block";
+            document.getElementById('premium').style.display = "none";
+        }
+
+        function showPremium() {
+            document.getElementById('premium').style.display = "block";
+            document.getElementById('roadmap').style.display = "none";
+        }
+
+        function logout() {
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
+            document.getElementById('message').textContent = "";
+            document.getElementById('actions').style.display = "none";
+            document.getElementById('roadmap').style.display = "none";
+            document.getElementById('premium').style.display = "none";
+            document.getElementById('loginBtn').style.display = "inline-block";  // Show login button again
+        }
+
+
+    <footer>
+        <p class="footer-text">&copy; 2024-2025 Fun Fishing. All rights reserved.</p>
+    </footer>
+
+    </script>
+</body>
+</html>
